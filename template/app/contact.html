@@ -1,0 +1,137 @@
+{% extends "app/base.html" %}
+{% load static %}
+    {% block title %}
+    Contact
+    {% endblock title %}
+
+    
+      {% block content %}
+      <h3>Welcome to <strong>Pet Store</strong></h3>
+      <h1>We're Human Friendly</h1>
+      <h2>Sale of all Food to all Breeds</h2>
+      <a href="#about" class="btn-get-started scrollto">Get pet food</a>
+      {% endblock content %}
+
+      {% block body %}
+      <nav class="navbar bg-body-tertiary ">
+        <div class="container-fluid ">
+          {% comment %} <span class="navbar-brand mb-0 h1 text-center">Contact Us</span> {% endcomment %}
+          <h1 class="text-center">Contact Us</h1>
+        </div>
+      </nav>    
+    <div class="container mt-2">
+        {% for message in messages %}
+
+        <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+            <strong>{{message}}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+        </div>
+        {% endfor %}
+
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <form action="/contact/" method="post">
+                {% csrf_token %}
+                <h1 class="text-dark fs-2"> Contact Form</h1>
+                <label for="name">Name</label>
+                <div class="form-group">
+                    <input type="text" class="form-control p-2" name="name" id="name" required>
+                </div>
+                <label for="email" class="p-2">Email</label>
+                <div class="form-group">
+                    <input type="email" class="form-control p-2" name="email" id="email" required>
+                </div>
+                <label for="desc">Description</label>
+                <div class="form-group">
+                    <input type="text" class="form-control p-2" name="desc" id="desc" required>
+                </div>
+                <label for="Phone">Phone</label>
+                <div class="form-group">
+                    <input type="number" class="form-control p-2" name="phone" id="phone" required>
+                </div>
+                <button type="submit" class="btn btn-primary" >Submit</button>
+                <br>
+                <br>        
+            </form>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+   </div>
+
+       <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>Pet Store</h3>
+            <p>
+              1087, 8th Cross Rd, Tavarekere, Aicobo Nagar, <br>
+              1st Stage, BTM 1st Stage,<br>
+              Bengaluru, Karnataka 560029 <br><br>
+              <strong>Phone:</strong> +91 9047034800<br>
+              <strong>Email:</strong> Gopikumar0503@gmail.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Free checkup for pets</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Grooming for pets</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home delivery of pet Products</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Coupons</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Burial Care</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Join Our Protest</h4>
+            <p>Let's save our sad ones and provide them a home and give them shelter, Be a part.</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Donate">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Pet Store</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/tempo-free-onepage-bootstrap-theme/ -->
+          Designed by <a href="https://www.youtube.com/">Gopi S</a>
+        </div>
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+
+      {% endblock body %}
+
